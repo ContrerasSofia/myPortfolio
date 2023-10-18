@@ -4,7 +4,7 @@
 
 function Header() {
   return (
-    <header className="header col-3 m-3">
+    <header className="header col-4 m-3">
       <h1 >Sofia C.</h1>
     </header>
   );
