@@ -1,10 +1,10 @@
 // We use JSX curly braces to evaluate the style object
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
-
+import '../styke/main.css';
 function Footer() {
     return (
-        <footer className='bg-dark text-white text-center py-3 position-absolute bottom-0 col-12'>
-            <div className="container ">
+        <footer className='bg-dark text-white text-center pt-3 col-12' id="footer">
+            <div className="container  ">
             <div className="row justify-content-around">
               <a href="https://github.com/ContrerasSofia" target="_blank" rel="noopener noreferrer" className="text-white mr-3 col-3">
                 <FaGithub  size={40}/> 

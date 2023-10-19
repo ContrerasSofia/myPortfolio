@@ -10,7 +10,7 @@ function App() {
   return (
     <>
     <div className="container text-center">
-      <div className="row justify-content-between p-3">
+      <div className="row justify-content-between  p-3">
         <Header/>
         <Nav />
       </div>

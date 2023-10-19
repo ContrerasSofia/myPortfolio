@@ -6,7 +6,7 @@ function NavTabs() {
   const currentPage = useLocation().pathname;
 
   return (
-    <ul className="nav nav-tabs justify-content-around col-7 mt-3" >
+    <ul className="nav nav-tabs justify-content-around col-sm-10 col-md-10 col-lg-7  mt-3" >
       <li className="nav-item">
         <Link
           to="/"
