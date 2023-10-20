@@ -13,3 +13,35 @@
     width: 100%;
     height: 4rem;            /* altura de pie de página */
   }
+
+  .imagen {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .imagen img {
+    transition: filter 0.3s ease;
+  }
+
+  .imagen .texto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .imagen .blur img {
+    filter: blur(5px);
+  }
+  
+  .imagen:hover .texto {
+    opacity: 1;
+  }
+  

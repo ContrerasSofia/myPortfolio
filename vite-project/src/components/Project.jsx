@@ -1,26 +1,38 @@
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-
-
+import '../styke/main.css';
+import { FaGithub, FaExternalLinkAlt} from 'react-icons/fa';
 
 // We use JSX curly braces to evaluate the style object on the JSX tag
 function Section(data) {
-  console.log(data.projectList[0]);
+  const handleMouseEnter = (event) => {
+    event.target.classList.add("blur");
+  };
+
+  const handleMouseLeave = (event) => {
+    event.target.classList.remove("blur");
+  };
+  
   return (
     <Row xs={1} md={3} className="g-4">
       {Array.from({ length: 6 }).map((_, idx) => (
         <Col key={idx}>
           <Card className="mb-3 ">
-            <Card.Img src={data.projectList[idx].foto} alt={data.title} />
-              <Card.ImgOverlay>
-                <Card.Title>{data.title}</Card.Title>
-                  <Card.Text>
-                    This is a wider card with supporting text below as a natural lead-in
-                    to additional content. This content is a little bit longer.
-                  </Card.Text>
-              <Card.Text>Last updated 3 mins ago</Card.Text>
-            </Card.ImgOverlay>
+          <div className="imagen" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+            <Card.Img src={data.projectList[idx].foto} alt={data.title}/>
+                  <Card.ImgOverlay>
+                    <Card.Text className='texto'>
+                    <Card.Title className='p-3 mt-3'>{data.projectList[idx].title}</Card.Title>
+                    <a href={data.projectList[idx].repo} target="_blank" rel="noopener noreferrer" className="text-white mr-3 col-3 p-3">
+                      <FaGithub  size={40}/> 
+                    </a>
+                    <a href={data.projectList[idx].deploy} target="_blank" rel="noopener noreferrer" className="text-white mr-3 col-3 p-3">
+                      <FaExternalLinkAlt size={35}/> 
+                    </a>
+                    </Card.Text>
+              </Card.ImgOverlay>
+          </div>    
         </Card>
         </Col>
       ))}
